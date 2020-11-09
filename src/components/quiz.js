@@ -62,8 +62,7 @@ class Home extends Component {
 
   nextQuestion() {
     this.setState({
-      loading: true,
-      count: 0
+      loading: true
     });
     let data = this.state.data;
     let step = this.state.step;
