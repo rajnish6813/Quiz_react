@@ -1,11 +1,48 @@
 {
-  "name": "cj-app",
+  "name": "Quiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.0"
+    "axios": "^0.18.1",
+    "bootstrap": "~4.3.1",
+    "bootstrap-daterangepicker": "^3.0.5",
+    "browser-image-compression": "^1.0.12",
+    "datatables.net": "^1.10.19",
+    "jquery": "^3.5.1",
+    "mkcert": "^1.4.0",
+    "moment": "^2.24.0",
+    "moment-range": "^4.0.2",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.14.7",
+    "primeflex": "^2.0.0",
+    "primeicons": "^4.0.0",
+    "primereact": "^5.0.0-rc.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-bootstrap-datetimerangepicker": "^2.0.4",
+    "react-countup": "^4.2.2",
+    "react-data-table-component": "^3.4.1",
+    "react-daterange-picker": "^2.0.1",
+    "react-day-picker": "^7.3.2",
+    "react-dom": "^16.8.5",
+    "react-grid-system": "^6.0.3",
+    "react-images-upload": "^1.2.8",
+    "react-loader-spinner": "^3.1.5",
+    "react-multiselect-checkboxes": "^0.1.1",
+    "react-overlay-loader": "0.0.3",
+    "react-parse": "^1.9.2",
+    "react-redux": "^6.0.1",
+    "react-responsive-modal": "^3.6.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^3.4.3",
+    "react-table": "^6.10.3",
+    "react-toastify": "^4.5.2",
+    "reactstrap": "^8.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,16 +53,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:3000/",
+  "devDependencies": {}
 }
