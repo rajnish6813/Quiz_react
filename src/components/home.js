@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Loader } from "react-overlay-loader";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizList: []
+      quizList: [],
+      loading: true
     };
   }
 
@@ -20,7 +22,8 @@ class Home extends Component {
       })
       .then(response => {
         this.setState({
-          quizList: response.data
+          quizList: response.data,
+          loading: false
         });
       })
       .catch(error => {
@@ -33,7 +36,7 @@ class Home extends Component {
 
   startQuiz(id) {
     this.props.history.push({
-      pathname: "/quiz",
+      pathname: "/quiz/" + id,
       state: {
         quizId: id
       }
@@ -41,6 +44,7 @@ class Home extends Component {
   }
 
   render() {
+    const { loading } = this.state;
     return (
       <div>
         <h2 style={{ textAlign: "center", marginTop: "2em" }}>
@@ -68,6 +72,7 @@ class Home extends Component {
             <br />
           </div>
         ))}
+        <Loader loading={loading} />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import history from "../store/history";
+import { Loader } from "react-overlay-loader";
 
 class Home extends Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Home extends Component {
       score: 0,
       count: 15,
       result: [],
-      answeredQuestion: []
+      answeredQuestion: [],
+      loading: true
     };
   }
 
@@ -59,6 +61,10 @@ class Home extends Component {
   }
 
   nextQuestion() {
+    this.setState({
+      loading: true,
+      count: 0
+    });
     let data = this.state.data;
     let step = this.state.step;
     if (step < data.questions.length) {
@@ -76,6 +82,7 @@ class Home extends Component {
       });
       clearInterval(this.inter);
       this.setState({
+        loading: false,
         count: 15
       });
       this.inter = setInterval(() => {
@@ -111,10 +118,10 @@ class Home extends Component {
               }
             }
           }
-          console.log(response.data.questions);
           this.setState({
             score: response.data.score,
-            result: response.data.questions
+            result: response.data.questions,
+            loading: false
           });
         })
         .catch(error => {
@@ -134,6 +141,7 @@ class Home extends Component {
   }
 
   render() {
+    const { loading } = this.state;
     return (
       <div>
         <div className="quiz-name">
@@ -214,6 +222,7 @@ class Home extends Component {
             ) : null}
           </div>
         )}
+        <Loader loading={loading} />
       </div>
     );
   }

@@ -52,3 +52,20 @@
   padding: 1px;
   background-color: #ffffff;
 }
+
+.react-overlay-loader-spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -30px;
+  margin-left: -20px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  border-top: 3px solid green;
+  border-bottom: 3px solid blue;
+  animation: react-overlay-loader-spinner 0.8s linear infinite;
+}
